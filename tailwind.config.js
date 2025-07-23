@@ -26,6 +26,19 @@ export default {
         mintcream: '#EFFFFD',
         richblack: '#0B0C10',
       },
+      backgroundImage: {
+        // 🔮 Gradient 1: #FFE5F1 → #F042FF
+        'gradient-1': 'linear-gradient(to bottom, #FFE5F1, #F042FF)',
+
+        // 🌈 Gradient 2: #FFF5F1 → #F042FF → #7226FF
+        'gradient-2': 'linear-gradient(to left, #FFF5F1, #F042FF, #7226FF)',
+
+        // 🧊 Gradient 3: #87F5F5 → #FFE5F1 → #F042FF
+        'gradient-3': 'linear-gradient(to left, #87F5F5, #FFE5F1, #F042FF)',
+
+        // 🌌 Gradient 4: #7226FF → #160078 → #010030
+        'gradient-4': 'linear-gradient(to bottom, #7226FF, #160078, #010030)',
+      },
     },
   },
   plugins: [],

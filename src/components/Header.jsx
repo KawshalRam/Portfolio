@@ -1,88 +1,74 @@
-import { motion } from "framer-motion";
-
+import {motion, spring} from "framer-motion";
 const Header = () => {
   return (
-    <header className="absolute w-full z-30 transition-all duration-300">
-      <div
-        className="container mx-auto px-2 sm:px-6 lg:px-4 
-        flex place-items-center justify-between h-16 md:h-20"
-      >
-        {/* Logo/Name */}
+    <header className="absolute w-full z-50 transition-all duration-300">
+      <div className="container mx-auto px-4 sm:px-6
+      lg:px- flex items-center justify-between h-16 md:h-20">
+        {/* Logo and Name*/}
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          animate={{ opacity: 1, x: 0 }}
+        initial={{opacity:0,x:-50}}
+          animate={{opacity:1,x:0}}
           transition={{
-            type: "spring",
-            stiffness: 100,
-            damping: 25,
-            delay: 0.3,
-            duration: 1.2,
-          }}
-          className="flex items-center"
-        >
-          <div
-            className="h-10 w-10 rounded-xl
-            bg-gradient-to-tr from-[#87F5F5] via-[#F042FF] to-[#7226FF]
-            flex items-center justify-center 
-            text-black font-bold text-xl mr-3"
-          >
+          type:spring,
+          stiffness:100,
+          damping:30,
+          delay:0.6,
+          duration:2.5,
+        }}
+        className=" flex items-center">
+          <motion.div
+          className="h-10 w-10 rounded-xl
+          bg-gradient-2
+          flex items-center justify-center
+          text-black font-extrabold text-xl mr-3  ">
             KR
-          </div>
-
-          <span
-            className="text-xl font-semibold 
-            bg-gradient-to-tr from-[#F042FF]  to-[#7226FF] 
-            bg-clip-text text-transparent"
-          >
+          </motion.div>
+          <motion.span
+          className="text-xl font-extrabold
+          bg-gradient-2
+          bg-clip-text text-transparent group">
             Kawshal Ram
-          </span>
+            <motion.span
+              layout
+              className="absolute bottom-0 left-0 w-full h-0.5
+              bg-gradient-2
+              transition-all 
+              duration-300 origin-left">
+              </motion.span>
+          </motion.span>
         </motion.div>
-
-        {/* Navigation Bar */}
-        <nav className="lg:flex hidden space-x-8">
-          {[
-            "Home",
-            "About Me",
-            "Projects",
-            "Services",
-            "Experience",
-            "Contact",
-          ].map((item, index) => (
+        <div className="lg:flex hidden space-x-8 ">
+          {["Home","About Me","Projects","Experience","Services","Contact"].map((item,
+            index)=>(
             <motion.a
-              key={item}
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{
-                type: "spring",
-                duration: 100,
-                stiffness: 100,
-                damping: 20,
-                delay: 0.7 + index * 0.2,
-              }}
-              className="relative font-medium transition-colors duration-300 group 
-              bg-gradient-to-tr from-[#F042FF]  to-[#7226FF] 
-              bg-clip-text text-transparent"
-              href="#"
-            >
+            initial={{opacity:0,y:-50}}
+            animate={{opacity:1,y:0}}
+            transition={{
+              type:spring,
+              stiffness:100,
+              damping:30,
+              delay:0.7 + index*0.2,
+            }}
+            key={item}
+            className="relative font-medium
+            transition-colors duration-300 group" 
+            href="#">
+              <span className="bg-gradient-2 bg-clip-text text-transparent">
               {item}
-              <span
-                className="absolute bottom-0 left-0 w-0 h-0.5
-                bg-gradient-to-r from-[#FFE5F1] via-[#E8C6FF] to-[#C9F6FF]
-                group-hover:w-full transition-all duration-300"
-              ></span>
-            </motion.a>
-          ))}
-        </nav>
-
-        {/* Social Icons -Desktop*/}
-        <div className="ms:flex hidden items-center space-x-4">
-          <a href="#">
-            
-          </a>
+              </span>
+              <motion.span
+              className="absolute bottom-0 left-0 w-0 h-0.5
+              bg-gradient-2
+              group-hover:w-full transition-all 
+              duration-300">
+              </motion.span>
+            </motion.a> 
+            ))}
         </div>
       </div>
-    </header>
-  );
-};
 
-export default Header;
+    </header>
+  )
+}
+
+export default Header
